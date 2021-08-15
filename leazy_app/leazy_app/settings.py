@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'leazy_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'leazy_db',
+        'NAME': 'leazy_database',
         'USER': 'admin',
         'PASSWORD': 'leazy',
         'HOST': 'localhost',

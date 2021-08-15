@@ -3,7 +3,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator, RegexVa
     MaxLengthValidator
 from django.db import models
 from users.models import User
-# from spots.models import Spot
+from spots.models import Spot
 
 def genderValidator(value):
     if value not in ['F', 'M']:
@@ -24,6 +24,12 @@ class Time_Period(models.Model):
     time_period_id = models.AutoField(primary_key=True)
     start = models.DateTimeField()
     end = models.DateTimeField()
+    spot_id = models.ForeignKey(Spot, on_delete=models.CASCADE)
+
+class Visit(models.Model):
+    visit_id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    spot_id = models.ForeignKey(Spot, on_delete=models.CASCADE)
 
 
 # Create your models here.

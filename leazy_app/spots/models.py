@@ -1,5 +1,4 @@
 from django.db import models
-from travel.models import Time_Period
 
 class Country(models.Model):
     country_id = models.AutoField(primary_key=True)
